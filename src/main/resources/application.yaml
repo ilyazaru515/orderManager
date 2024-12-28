@@ -1,0 +1,28 @@
+server:
+  port: 8099
+spring:
+  application:
+  name: ordermanager
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL10Dialect
+  flyway:
+    enabled: false
+  hikari:
+    minimum-idle: 1
+    maximum-pool-size: 2
+    connection-timeout: 5000
+    idle-timeout: 5000
+    max-lifetime: 300000
+    pool-name: HikariPoolIncidentResult
+  datasource:
+    ignored-invocation: false
+    url: jdbc:postgresql://localhost:5499/localPsql
+    driver-class-name: org.postgresql.Driver
+    username: order_manager_user
+    password: order_manager_pass
